@@ -1,0 +1,6 @@
+@use '@/app/styles/colors.scss' as c;
+
+.header {
+	border-bottom: 1px solid c.$border;
+	cursor: pointer;
+}
