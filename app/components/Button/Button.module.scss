@@ -1,0 +1,36 @@
+@use '@/app/styles/colors.scss' as c;
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	// gap: v.$margin-1;
+	// border-radius: v.$border-radius-2;
+	border: 0;
+	max-height: 50px;
+	height: min-content;
+	// padding: 0 v.$padding-5;
+	box-sizing: border-box;
+	// transition: background-color v.$transition-speed-1;
+
+	&-primary {
+		@extend .container;
+		color: white;
+		background-color: c.$primary;
+
+		// &:hover {
+		// 	background-color: c.$primary-light;
+		// }
+	}
+
+	&-secondary {
+		@extend .container;
+		background-color: transparent;
+		border: 1px solid c.$border;
+
+		&:hover {
+			// background-color: c.$gray;
+		}
+	}
+}

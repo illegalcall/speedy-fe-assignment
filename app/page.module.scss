@@ -1,5 +1,8 @@
 @use 'styles/colors.scss' as c;
 
+$max-width: 1500px;
+
 .main {
-	width: 100%;
+	width: -webkit-fill-available;
+	max-width: $max-width;
 }

@@ -2,7 +2,7 @@ import './globals.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from './layout.module.scss';
 import { Inter } from 'next/font/google';
-import { LeftDrawer } from './components';
+import { LeftDrawer } from './pageComponents';
 
 const inter = Inter({ subsets: ['latin'] });
 

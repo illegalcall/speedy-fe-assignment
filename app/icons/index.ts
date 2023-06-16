@@ -6,3 +6,4 @@ export * from './History';
 export * from './Logout';
 export * from './RightChevron';
 export * from './LeftChevron';
+export * from './Delete';
