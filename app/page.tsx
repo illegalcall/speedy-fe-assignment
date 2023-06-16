@@ -1,5 +1,5 @@
 import styles from './page.module.scss';
-import { Categories, CustomTag } from './pageComponents';
+import { Categories } from './pageComponents';
 
 export default function Home() {
 	return (

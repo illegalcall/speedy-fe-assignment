@@ -7,3 +7,5 @@ export * from './Logout';
 export * from './RightChevron';
 export * from './LeftChevron';
 export * from './Delete';
+export * from './Edit';
+export * from './Preview';

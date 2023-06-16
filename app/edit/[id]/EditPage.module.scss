@@ -4,3 +4,35 @@
 	border-bottom: 1px solid c.$border;
 	cursor: pointer;
 }
+
+.container {
+	display: flex;
+}
+
+.editor {
+	flex: 3;
+}
+
+.generate {
+	flex: 1;
+	border-left: 1px solid c.$border;
+	height: 100vh;
+	&__btn-container {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		// align-items: center;
+		// height: 100%;
+	}
+}
+
+.blog-title {
+	border-bottom: 1px solid c.$border;
+}
+
+.choose-tone {
+	margin: auto;
+	select {
+		padding: 8px;
+	}
+}

@@ -6,7 +6,7 @@ export type ButtonTheme = 'primary' | 'secondary';
 export interface IButtonProps {
 	children: React.ReactNode;
 	theme?: ButtonTheme;
-	// leftIcon?: React.ReactNode;
+	leftIcon?: React.ReactNode;
 	className?: string;
 	onClick?: () => void;
 }
@@ -17,10 +17,9 @@ const Button = React.forwardRef<
 >(
 	(
 		{
-			// text,
 			children,
 			theme = 'primary',
-			// leftIcon,
+			leftIcon,
 			className,
 			...rest
 		},
@@ -35,14 +34,14 @@ const Button = React.forwardRef<
 				} ${className}`}
 				{...rest}
 			>
+				{leftIcon && (
+					<div className={styles[`left-icon`]}>
+						{leftIcon}
+					</div>
+				)}
 				<div className={styles[`text-${theme}`]}>
 					{children}
 				</div>
-				{/* {rightIcon && (
-					<div className={styles[`icon-content-${theme}`]}>
-						{rightIcon}
-					</div>
-				)} */}
 			</button>
 		);
 	}
