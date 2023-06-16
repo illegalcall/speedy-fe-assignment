@@ -1,7 +1,8 @@
 import './globals.css';
 import 'bootstrap/dist/css/bootstrap.css';
-
+import styles from './layout.module.scss';
 import { Inter } from 'next/font/google';
+import { LeftDrawer } from './components';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>{children}</body>
+			<body
+				className={`${styles['container']} ${inter.className}`}
+			>
+				<LeftDrawer />
+				<div className=''>{children}</div>
+			</body>
 		</html>
 	);
 }

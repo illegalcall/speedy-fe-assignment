@@ -1,0 +1,83 @@
+@use '@/app/styles/colors.scss' as c;
+
+$container-width-expanded: 250px;
+$container-width-collapsed: 80px;
+
+.container {
+	width: $container-width-expanded;
+	height: 100vh;
+	border-right: 2px solid c.$border;
+	position: relative;
+	padding-top: 20px;
+	color: c.$grey-text;
+	font-weight: 600;
+}
+
+.expanded {
+	padding-left: 10px;
+}
+
+.collapsed {
+	width: $container-width-collapsed;
+}
+
+.logo {
+	padding: 5px 20px !important;
+	&__name {
+		color: c.$primary;
+		font-size: 24px;
+		font-weight: 700;
+		padding-left: 10px;
+	}
+	margin-bottom: 25px;
+	svg {
+		height: 40px;
+		width: auto;
+	}
+}
+
+.logo:hover {
+	cursor: pointer;
+	background-color: c.$hover;
+}
+
+.navigation {
+	// color: c.$grey-text;
+	// font-weight: 600;
+	margin-right: 20px;
+}
+
+.nav-item {
+	padding: 16px 24px;
+	&__active {
+		background-color: c.$primary-light;
+		color: c.$primary;
+	}
+}
+.nav-item:hover {
+	cursor: pointer;
+	background-color: c.$hover;
+}
+
+.logout {
+	position: absolute;
+	bottom: 0px;
+	width: 85%;
+}
+
+.drawer-switch {
+	color: rgb(254, 88, 41);
+	position: absolute;
+	top: 47vh;
+	z-index: 500;
+	font-size: 32px;
+	right: 0px;
+	height: 60px;
+	border-left: 1px solid rgb(254, 88, 41);
+	border-top: 1px solid rgb(254, 88, 41);
+	border-bottom: 1px solid rgb(254, 88, 41);
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background: rgb(255, 242, 236);
+	cursor: pointer;
+}
