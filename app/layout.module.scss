@@ -1,3 +1,7 @@
 .container {
 	display: flex;
 }
+
+.children {
+	flex-grow: 1;
+}

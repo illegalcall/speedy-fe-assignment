@@ -22,7 +22,7 @@ export default function RootLayout({
 				className={`${styles['container']} ${inter.className}`}
 			>
 				<LeftDrawer />
-				<div className=''>{children}</div>
+				<div className={styles['children']}>{children}</div>
 			</body>
 		</html>
 	);

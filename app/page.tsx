@@ -3,7 +3,9 @@ import { Categories } from './components';
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
+		<main
+			className={`mt-4 mx-3 container-fluid ${styles.main}`}
+		>
 			<Categories />
 		</main>
 	);
