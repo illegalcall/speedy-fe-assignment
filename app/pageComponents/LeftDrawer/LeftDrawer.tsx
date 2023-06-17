@@ -1,6 +1,5 @@
 'use client';
 import React, { use, useState } from 'react';
-import styles from './LeftDrawer.module.scss';
 import {
 	Dashboard,
 	History,
@@ -11,10 +10,14 @@ import {
 	Socials,
 	Speedy,
 } from '@/app/icons';
+
 import {
 	NavigationItemCollapsed,
 	NavigationItemExpanded,
 } from './NavigationItem';
+
+import styles from './LeftDrawer.module.scss';
+
 const LeftDrawer = () => {
 	const [showExpandedDrawer, setShowExpandedDrawer] =
 		useState(false);

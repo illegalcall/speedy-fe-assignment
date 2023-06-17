@@ -3,7 +3,6 @@
 	display: flex;
 	justify-content: space-between;
 	border: 1px solid c.$border;
-	// border: 2px solid red;
 	padding: 20px;
 }
 
@@ -13,11 +12,6 @@
 	width: min-content;
 	height: min-content;
 }
-
-// .btn-container {
-// 	display: flex;
-// 	gap: 5px;
-// }
 
 .category-tab {
 	cursor: pointer;

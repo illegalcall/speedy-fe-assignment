@@ -1,12 +1,13 @@
 'use client';
 
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import styles from './EditPage.module.scss';
+import axios from 'axios';
 import { Button } from '@/app/components';
 import { Edit, Preview, RightChevron } from '@/app/icons';
+
 import Editor from './Editor';
 import { toneOptions } from './consts';
+import styles from './EditPage.module.scss';
 
 interface Props {
 	id: string;

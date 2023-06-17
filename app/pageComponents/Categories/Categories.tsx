@@ -1,12 +1,14 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Topic from './Topic';
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
+
 import { CategoryEnum, ITopic } from '@/app/types';
-import styles from './Categories.module.scss';
 import { Button } from '@/app/components';
 import { RightChevron } from '@/app/icons';
-import { useRouter } from 'next/navigation';
+
+import Topic from './Topic';
+import styles from './Categories.module.scss';
 
 const Categories = () => {
 	const router = useRouter();
