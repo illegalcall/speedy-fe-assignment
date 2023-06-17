@@ -25,7 +25,6 @@ const LeftDrawer = () => {
 		? styles['expanded']
 		: styles['collapsed'];
 
-	//TODO: Implement logic to determine which nav item is active
 	const navItemActiveClassName = styles['nav-item__active'];
 
 	return (
