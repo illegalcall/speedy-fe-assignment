@@ -1,0 +1,46 @@
+@use '@/app/styles/colors.scss' as c;
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.header {
+	border-bottom: 1px solid c.$border;
+	cursor: pointer;
+}
+
+.card {
+	margin: 0 10%;
+	border: 1px solid c.$border;
+	&__header {
+		background-color: c.$background-light;
+		border: 2px solid c.$border;
+	}
+	padding-bottom: 4rem;
+}
+
+.add-topic {
+	padding: 1rem 4rem 2rem;
+	&__form-label {
+		font-size: 1rem;
+		line-height: 1.5rem;
+		color: #667085;
+		margin: 0;
+	}
+	&__form-input {
+		border: 1px solid #d3d3d3;
+		border-radius: 6px;
+		padding: 16px 24px;
+		font-family: sans-serif;
+		font-size: 0.875rem;
+		line-height: 1.5rem;
+		color: #344054;
+		width: 90%;
+	}
+}
+
+.create_topic {
+	margin-left: 4rem;
+}

@@ -9,6 +9,7 @@ export interface IButtonProps {
 	leftIcon?: React.ReactNode;
 	className?: string;
 	onClick?: () => void;
+	type?: 'submit' | 'button';
 }
 
 const Button = React.forwardRef<
@@ -21,13 +22,14 @@ const Button = React.forwardRef<
 			theme = 'primary',
 			leftIcon,
 			className,
+			type,
 			...rest
 		},
 		ref
 	) => {
 		return (
 			<button
-				type='button'
+				type={type}
 				ref={ref}
 				className={`${
 					styles[`container-${theme}`]

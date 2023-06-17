@@ -24,7 +24,8 @@ export async function POST(
 ) {
 	try {
 		const body = await request.json();
-		const { title, tags } = body;
+		const { title, keywords } = body;
+		const tags = keywords.split(',');
 		const newTopic = {
 			id: Math.random().toString(36).substr(2, 9),
 			title,
