@@ -14,13 +14,7 @@ const Categories = () => {
 	]);
 	useEffect(() => {
 		const fetchData = async () => {
-			const topics = await axios.get(
-				'http://localhost:3000/api/topics'
-			);
-			console.log(
-				'🚀 ~ file: Categories.tsx:22 ~ fetchData ~ topics:',
-				topics.data.topics
-			);
+			const topics = await axios.get('/api/topics');
 			setTopics(topics.data?.topics);
 		};
 		fetchData();
@@ -28,7 +22,7 @@ const Categories = () => {
 
 	return (
 		<div>
-			<div className=''>Categories</div>
+			<div className=''>Category</div>
 			{topics.map((topic: ITopic) => {
 				return (
 					<Topic

@@ -21,8 +21,7 @@
 		display: flex;
 		gap: 1rem;
 		justify-content: center;
-		// align-items: center;
-		// height: 100%;
+		margin: 1rem 0;
 	}
 }
 
@@ -31,7 +30,10 @@
 }
 
 .choose-tone {
-	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
 	select {
 		padding: 8px;
 	}
