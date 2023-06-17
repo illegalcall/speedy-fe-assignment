@@ -3,11 +3,11 @@
 	display: flex;
 	justify-content: space-between;
 	border: 1px solid c.$border;
-	padding: 20px;
+	padding: 1.25rem;
 }
 
 .delete {
-	padding: 10px 15px;
+	padding: 0.6rem 1rem;
 	background-color: c.$hover;
 	width: min-content;
 	height: min-content;
@@ -16,7 +16,7 @@
 .category-tab {
 	cursor: pointer;
 	color: c.$grey-text;
-	padding: 0 12px;
+	padding: 0 0.75rem;
 }
 
 .active {

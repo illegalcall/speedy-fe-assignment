@@ -1,12 +1,13 @@
 'use client';
+
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 import { LeftChevron, RightChevron } from '@/app/icons';
 
-import { useRouter } from 'next/navigation';
-import styles from './AddTopic.module.scss';
 import { Button } from '../components';
-import axios from 'axios';
+import styles from './AddTopic.module.scss';
 
 const AddTopicPage = () => {
 	const router = useRouter();
@@ -25,7 +26,6 @@ const AddTopicPage = () => {
 		}
 	};
 
-	console.log('create topic data', createTopicData);
 	return (
 		<div className={`m-2 ${styles['container']}`}>
 			<div

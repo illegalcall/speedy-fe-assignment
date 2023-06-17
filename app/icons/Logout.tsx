@@ -9,7 +9,7 @@ export const Logout: React.FC<
 			fill='currentColor'
 			strokeWidth='0'
 			viewBox='0 0 24 24'
-			style={{ width: 'auto', height: '24px' }}
+			style={{ width: 'auto', height: '1.5rem' }}
 			height='1em'
 			width='1em'
 			xmlns='http://www.w3.org/2000/svg'
