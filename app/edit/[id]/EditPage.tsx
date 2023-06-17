@@ -55,7 +55,7 @@ const EditPage: React.FC<Props> = ({ id }) => {
 				<Editor content={blog} />
 			</div>
 			<div className={`${styles['generate']}`}>
-				<div
+				{/* <div
 					className={`${styles['generate__btn-container']}`}
 				>
 					<Button
@@ -72,7 +72,7 @@ const EditPage: React.FC<Props> = ({ id }) => {
 					>
 						Edit
 					</Button>
-				</div>
+				</div> */}
 				<div className={styles['choose-tone']}>
 					<span className='mx-1'>Tone:</span>
 					<select
