@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './CustomTag.module.scss';
-import { tagColors } from './types';
+import { tagColors } from './consts';
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
 	value: any;

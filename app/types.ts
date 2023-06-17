@@ -6,6 +6,7 @@ export interface ITopic {
 }
 
 export enum CategoryEnum {
+	All = 'All',
 	Custom = 'Custom',
 	ICP = 'ICP',
 	Mission = 'Mission',

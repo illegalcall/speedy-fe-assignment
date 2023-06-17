@@ -4,9 +4,13 @@
 	justify-content: space-between;
 	border: 1px solid c.$border;
 	padding: 1.25rem;
+	&__name {
+		font-weight: 500;
+	}
 }
 
 .delete {
+	cursor: pointer;
 	padding: 0.6rem 1rem;
 	background-color: c.$hover;
 	width: min-content;

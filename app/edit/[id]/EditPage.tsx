@@ -29,7 +29,7 @@ const EditPage: React.FC<Props> = ({ id }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const topic = await axios.get(
-				`${BERoutes.TOPIC}${id}`
+				`${BERoutes.TOPICS}/${id}`
 			);
 			setTopic(topic.data);
 		};

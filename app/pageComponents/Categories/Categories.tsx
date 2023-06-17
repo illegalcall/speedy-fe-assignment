@@ -18,11 +18,11 @@ const Categories = () => {
 			id: '0',
 			title: 'Loading...',
 			tags: ['Loading...'],
-			category: CategoryEnum.Custom,
+			category: CategoryEnum.All,
 		},
 	]);
 	const [selectedTab, setSelectedTab] =
-		useState<CategoryEnum>(CategoryEnum.Custom);
+		useState<CategoryEnum>(CategoryEnum.All);
 	useEffect(() => {
 		const fetchData = async () => {
 			const topics = await axios.get(BERoutes.TOPICS);
@@ -32,12 +32,23 @@ const Categories = () => {
 	}, []);
 
 	const handleTabChange = (e: any) => {
-		console.log('tab changed', e.target.innerText);
 		setSelectedTab(e.target.innerText.toLowerCase());
 	};
 
 	const handleAddTopic = () => {
 		router.push(FERoutes.ADD_TOPIC);
+	};
+
+	const handleDeleteTopic = async (id: string) => {
+		try {
+			const res = await axios.delete(
+				`${BERoutes.TOPICS}/${id}`
+			);
+			setTopics(res.data);
+			router.push(FERoutes.HOME);
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	return (
@@ -77,7 +88,7 @@ const Categories = () => {
 			</div>
 			<div>
 				<div
-					className={`px-4 py-2 ${styles['card__header']}`}
+					className={`px-4 py-2 fw-semibold ${styles['card__header']}`}
 				>
 					{selectedTab.toLowerCase() ===
 					CategoryEnum.Custom.toLowerCase()
@@ -87,16 +98,20 @@ const Categories = () => {
 				{topics.map((topic: ITopic) => {
 					if (
 						topic.category.toLowerCase() !==
-						selectedTab.toLowerCase()
+							selectedTab.toLowerCase() &&
+						selectedTab.toLowerCase() !==
+							CategoryEnum.All.toLowerCase()
 					) {
 						return null;
 					}
+
 					return (
 						<Topic
 							key={topic.id}
 							id={topic.id}
 							name={topic.title}
 							tags={topic.tags}
+							handleDelete={handleDeleteTopic}
 						/>
 					);
 				})}

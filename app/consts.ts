@@ -5,7 +5,6 @@ export enum FERoutes {
 }
 
 export enum BERoutes {
-	TOPIC = '/api/topic/',
 	TOPICS = '/api/topics',
 	BLOG = '/api/blog',
 }

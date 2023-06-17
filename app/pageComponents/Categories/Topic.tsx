@@ -5,21 +5,29 @@ import { useRouter } from 'next/navigation';
 
 import { Button, CustomTag } from '@/app/components';
 import { Delete, RightChevron } from '@/app/icons';
-import { FERoutes } from '@/app/consts';
+import { BERoutes, FERoutes } from '@/app/consts';
 
 import styles from './Categories.module.scss';
+import axios from 'axios';
 
 interface Props {
 	id: string;
 	name: string;
 	tags: string[];
+	handleDelete: (id: string) => void;
 }
 
-const Topic: React.FC<Props> = ({ name, tags, id }) => {
+const Topic: React.FC<Props> = ({
+	name,
+	tags,
+	id,
+	handleDelete,
+}) => {
 	const router = useRouter();
 	const handleEdit = () => {
 		router.push(`${FERoutes.EDIT_TOPIC}${id}`);
 	};
+
 	return (
 		<div className={styles['topic']}>
 			<div className=''>
@@ -46,7 +54,10 @@ const Topic: React.FC<Props> = ({ name, tags, id }) => {
 				>
 					Write <RightChevron height={25} width={25} />
 				</Button>
-				<div className={styles['delete']}>
+				<div
+					className={styles['delete']}
+					onClick={() => handleDelete(id)}
+				>
 					<Delete />
 				</div>
 			</div>
