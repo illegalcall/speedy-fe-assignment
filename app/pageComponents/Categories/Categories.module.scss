@@ -7,6 +7,10 @@
 	&__name {
 		font-weight: 500;
 	}
+	&__tags {
+		max-width: 756px;
+		flex-wrap: wrap;
+	}
 }
 
 .delete {
@@ -34,6 +38,7 @@
 	&__header {
 		background-color: c.$background-light;
 		border: 2px solid c.$border;
+		font-weight: 550;
 	}
 	padding-bottom: 4rem;
 }

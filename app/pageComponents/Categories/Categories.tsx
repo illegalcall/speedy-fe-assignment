@@ -88,7 +88,7 @@ const Categories = () => {
 			</div>
 			<div>
 				<div
-					className={`px-4 py-2 fw-semibold ${styles['card__header']}`}
+					className={`px-4 py-2 ${styles['card__header']}`}
 				>
 					{selectedTab.toLowerCase() ===
 					CategoryEnum.Custom.toLowerCase()
