@@ -75,22 +75,32 @@ const Categories = () => {
 					</span>
 				</Button>
 			</div>
-			{topics.map((topic: ITopic) => {
-				if (
-					topic.category.toLowerCase() !==
-					selectedTab.toLowerCase()
-				) {
-					return null;
-				}
-				return (
-					<Topic
-						key={topic.id}
-						id={topic.id}
-						name={topic.title}
-						tags={topic.tags}
-					/>
-				);
-			})}
+			<div>
+				<div
+					className={`px-4 py-2 ${styles['card__header']}`}
+				>
+					{selectedTab.toLowerCase() ===
+					CategoryEnum.Custom.toLowerCase()
+						? 'Your Topics'
+						: "Speedy's Recommendations"}
+				</div>
+				{topics.map((topic: ITopic) => {
+					if (
+						topic.category.toLowerCase() !==
+						selectedTab.toLowerCase()
+					) {
+						return null;
+					}
+					return (
+						<Topic
+							key={topic.id}
+							id={topic.id}
+							name={topic.title}
+							tags={topic.tags}
+						/>
+					);
+				})}
+			</div>
 		</div>
 	);
 };

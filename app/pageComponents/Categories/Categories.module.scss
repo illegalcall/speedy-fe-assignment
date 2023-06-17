@@ -23,3 +23,13 @@
 	color: c.$primary;
 	border-bottom: 5px solid c.$primary;
 }
+
+.card {
+	margin: 0 10%;
+	border: 1px solid c.$border;
+	&__header {
+		background-color: c.$background-light;
+		border: 2px solid c.$border;
+	}
+	padding-bottom: 4rem;
+}

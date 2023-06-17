@@ -20,7 +20,7 @@ import styles from './LeftDrawer.module.scss';
 
 const LeftDrawer = () => {
 	const [showExpandedDrawer, setShowExpandedDrawer] =
-		useState(false);
+		useState(true);
 	const drawerClassName = showExpandedDrawer
 		? styles['expanded']
 		: styles['collapsed'];
