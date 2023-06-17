@@ -6,6 +6,7 @@ import axios from 'axios';
 import { CategoryEnum, ITopic } from '@/app/types';
 import { Button } from '@/app/components';
 import { RightChevron } from '@/app/icons';
+import { BERoutes, FERoutes } from '@/app/consts';
 
 import Topic from './Topic';
 import styles from './Categories.module.scss';
@@ -24,7 +25,7 @@ const Categories = () => {
 		useState<CategoryEnum>(CategoryEnum.Custom);
 	useEffect(() => {
 		const fetchData = async () => {
-			const topics = await axios.get('/api/topics');
+			const topics = await axios.get(BERoutes.TOPICS);
 			setTopics(topics.data?.topics);
 		};
 		fetchData();
@@ -36,7 +37,7 @@ const Categories = () => {
 	};
 
 	const handleAddTopic = () => {
-		router.push('/add_topic');
+		router.push(FERoutes.ADD_TOPIC);
 	};
 
 	return (

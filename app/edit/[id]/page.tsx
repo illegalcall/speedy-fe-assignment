@@ -1,9 +1,12 @@
 'use client';
 
-import { LeftChevron } from '@/app/icons';
-import styles from './EditPage.module.scss';
 import { useRouter } from 'next/navigation';
+
 import EditPage from './EditPage';
+import { LeftChevron } from '@/app/icons';
+import { FERoutes } from '@/app/consts';
+
+import styles from './EditPage.module.scss';
 
 const Edit = async ({
 	params,
@@ -17,7 +20,7 @@ const Edit = async ({
 			<div
 				className={`hstack p-2 pt-3 pb-4 ${styles['header']}`}
 				onClick={() => {
-					router.push('/');
+					router.push(FERoutes.HOME);
 				}}
 			>
 				<LeftChevron height={30} width={30} />

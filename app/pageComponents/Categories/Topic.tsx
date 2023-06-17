@@ -1,9 +1,13 @@
 'use client';
+
 import React from 'react';
-import styles from './Categories.module.scss';
+import { useRouter } from 'next/navigation';
+
 import { Button, CustomTag } from '@/app/components';
 import { Delete, RightChevron } from '@/app/icons';
-import { useRouter } from 'next/navigation';
+import { FERoutes } from '@/app/consts';
+
+import styles from './Categories.module.scss';
 
 interface Props {
 	id: string;
@@ -14,7 +18,7 @@ interface Props {
 const Topic: React.FC<Props> = ({ name, tags, id }) => {
 	const router = useRouter();
 	const handleEdit = () => {
-		router.push(`/edit/${id}`);
+		router.push(`${FERoutes.EDIT_TOPIC}${id}`);
 	};
 	return (
 		<div className={styles['topic']}>

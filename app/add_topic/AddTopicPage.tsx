@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
 import { LeftChevron, RightChevron } from '@/app/icons';
+import { BERoutes, FERoutes } from '../consts';
 
 import { Button } from '../components';
 import styles from './AddTopic.module.scss';
@@ -19,8 +20,8 @@ const AddTopicPage = () => {
 	const handleAddTopic = async (e: any) => {
 		e.preventDefault();
 		try {
-			await axios.post('api/topics/', createTopicData);
-			router.push('/');
+			await axios.post(BERoutes.TOPICS, createTopicData);
+			router.push(FERoutes.HOME);
 		} catch (error) {
 			console.log('error', error);
 		}
@@ -31,7 +32,7 @@ const AddTopicPage = () => {
 			<div
 				className={`hstack p-2 pt-3 pb-4 ${styles['header']}`}
 				onClick={() => {
-					// router.push('/');
+					router.push(FERoutes.HOME);
 				}}
 			>
 				<LeftChevron height={30} width={30} />

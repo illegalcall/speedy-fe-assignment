@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button } from '@/app/components';
 import { Edit, Preview, RightChevron } from '@/app/icons';
+import { BERoutes } from '@/app/consts';
 
 import Editor from './Editor';
 import { toneOptions } from './consts';
@@ -27,19 +28,20 @@ const EditPage: React.FC<Props> = ({ id }) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const topic = await axios.get(`/api/topics/${id}`);
+			const topic = await axios.get(
+				`${BERoutes.TOPIC}${id}`
+			);
 			setTopic(topic.data);
 		};
 		fetchData();
 	}, []);
 
 	const handleBlogGenerate = async () => {
-		const blog = await axios.post('/api/blog', {
+		const blog = await axios.post(BERoutes.BLOG, {
 			title: topic.title,
 			tone: tone,
 		});
 		setBlog(blog.data.content);
-		console.log('blog data', blog.data);
 	};
 
 	return (
