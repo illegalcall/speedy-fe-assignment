@@ -55,7 +55,7 @@ const Editor = ({ content = '' }) => {
 		setCode(content);
 	};
 	return (
-		<div>
+		<div className='mx-5 my-4'>
 			<ReactQuill
 				theme='snow'
 				modules={modules}

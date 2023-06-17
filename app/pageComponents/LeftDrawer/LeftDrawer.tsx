@@ -36,9 +36,9 @@ const LeftDrawer = () => {
 				}}
 			>
 				{showExpandedDrawer ? (
-					<RightChevron />
-				) : (
 					<LeftChevron />
+				) : (
+					<RightChevron />
 				)}
 			</div>
 			<div className={`${styles['navigation']}`}>

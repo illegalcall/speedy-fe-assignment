@@ -2,11 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import Topic from './Topic';
 import axios from 'axios';
-import { ITopic } from '@/app/types';
+import { CategoryEnum, ITopic } from '@/app/types';
 import styles from './Categories.module.scss';
 import { Button } from '@/app/components';
 import { RightChevron } from '@/app/icons';
-import { categories } from './consts';
 import { useRouter } from 'next/navigation';
 
 const Categories = () => {
@@ -16,8 +15,11 @@ const Categories = () => {
 			id: '0',
 			title: 'Loading...',
 			tags: ['Loading...'],
+			category: CategoryEnum.Custom,
 		},
 	]);
+	const [selectedTab, setSelectedTab] =
+		useState<CategoryEnum>(CategoryEnum.Custom);
 	useEffect(() => {
 		const fetchData = async () => {
 			const topics = await axios.get('/api/topics');
@@ -25,7 +27,6 @@ const Categories = () => {
 		};
 		fetchData();
 	}, []);
-	const [selectedTab, setSelectedTab] = useState('All');
 
 	const handleTabChange = (e: any) => {
 		console.log('tab changed', e.target.innerText);
@@ -45,14 +46,15 @@ const Categories = () => {
 				className={`d-flex justify-content-between my-4 ${styles['categories-tabs']}`}
 			>
 				<div className='hstack gap-5'>
-					{categories.map((category) => {
+					{Object.keys(CategoryEnum).map((category) => {
 						return (
 							<div
 								key={category}
 								className={`fw-bold ${
 									styles['category-tab']
 								} ${
-									selectedTab === category.toLowerCase()
+									selectedTab.toLowerCase() ===
+									category.toLowerCase()
 										? styles['active']
 										: ''
 								}`}
@@ -71,6 +73,12 @@ const Categories = () => {
 				</Button>
 			</div>
 			{topics.map((topic: ITopic) => {
+				if (
+					topic.category.toLowerCase() !==
+					selectedTab.toLowerCase()
+				) {
+					return null;
+				}
 				return (
 					<Topic
 						key={topic.id}

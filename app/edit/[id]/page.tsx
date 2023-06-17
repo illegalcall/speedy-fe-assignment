@@ -13,7 +13,7 @@ const Edit = async ({
 	const router = useRouter();
 
 	return (
-		<div className='m-2'>
+		<div>
 			<div
 				className={`hstack p-2 pt-3 pb-4 ${styles['header']}`}
 				onClick={() => {

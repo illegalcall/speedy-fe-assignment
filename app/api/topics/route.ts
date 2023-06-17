@@ -1,3 +1,4 @@
+import { CategoryEnum } from '@/app/types';
 import data from '@/public/data.json';
 import fs from 'fs';
 import path from 'path';
@@ -30,6 +31,7 @@ export async function POST(
 			id: Math.random().toString(36).substr(2, 9),
 			title,
 			tags,
+			category: CategoryEnum.Custom,
 		};
 		data.topics.push(newTopic);
 		fs.writeFile(

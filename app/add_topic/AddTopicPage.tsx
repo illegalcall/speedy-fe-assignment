@@ -9,6 +9,7 @@ import { Button } from '../components';
 import axios from 'axios';
 
 const AddTopicPage = () => {
+	const router = useRouter();
 	const [createTopicData, setCreateTopicData] = useState({
 		title: '',
 		keywords: '',
@@ -16,10 +17,12 @@ const AddTopicPage = () => {
 
 	const handleAddTopic = async (e: any) => {
 		e.preventDefault();
-		const res = await axios.post(
-			'api/topics/',
-			createTopicData
-		);
+		try {
+			await axios.post('api/topics/', createTopicData);
+			router.push('/');
+		} catch (error) {
+			console.log('error', error);
+		}
 	};
 
 	console.log('create topic data', createTopicData);
