@@ -10,15 +10,13 @@ export async function POST(
 	try {
 		const body = await request.json();
 		const { title, tone } = body;
-		console.log('🚀 ~ file: route.ts:13 ~ title:', title);
 		const newBlog = {
 			id: Math.random().toString(36).substr(2, 9),
 			title,
 			tone,
 			content: `This is blog related to ${title} and tone is ${tone}`,
 		};
-		// data.blogs.push(newBlog);
-		// fs.writeFile(
+		//TODO: Save in db, if you want
 		return new Response(JSON.stringify(newBlog), {
 			headers: { 'content-type': 'application/json' },
 		});
